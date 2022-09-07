@@ -7,12 +7,13 @@
 # 
 #   DESCRIPTION:  graphing routines.  
 # 
-#       UPDATES:  
+#       UPDATES:  221006: nx.draw_networkx_nodes() no longer has
+#                 font_size argument
 #        AUTHOR:  Pete Schmitt (discovery (iMac)), pschmitt@upenn.edu
 #       COMPANY:  University of Pennsylvania
 #       VERSION:  0.1.0
 #       CREATED:  Tue Mar 21 13:12:46 EDT 2017
-#      REVISION:  
+#      REVISION:  Tue Sep  6 20:02:28 CDT 2022
 #==============================================================================
 import matplotlib
 import matplotlib.pyplot as plt
@@ -35,7 +36,7 @@ def plot_tree(best,rseed,outdir):
     
     f = plt.figure()
     nx.draw_networkx_nodes(g, pos, node_size=1500, 
-                           font_size=7, node_color='lightblue')
+                           node_color='lightblue')
     nx.draw_networkx_edges(g, pos)
     nx.draw_networkx_labels(g, pos, labels, font_size=7)
     plotfile = outdir + "tree_" + str(rseed) + ".pdf"
